@@ -1,5 +1,7 @@
 package br.unincor.exception;
 
+import br.unincor.model.Produto;
+
 /**
  * Receber um objeto "Produto" via
  * construtor e implementar o método
@@ -9,6 +11,17 @@ package br.unincor.exception;
  *
  */
 public class PrecoZeradoException extends Exception {
+	private Produto produto;
+
+	public PrecoZeradoException(Produto produto) {
+		super();
+		this.produto = produto;
+	}
+
+	@Override
+	public String getMessage() {
+		return "O produto " + this.produto.getNome() + " está com o preço zerado.";
+	}
 
 	private static final long serialVersionUID = 1L;
 

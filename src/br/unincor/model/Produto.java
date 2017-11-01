@@ -10,7 +10,9 @@ public class Produto {
 	public Produto(String nome, Double preco) {
 		super();
 		this.nome = nome;
-		this.preco = preco;
+		if (preco>=0)
+		   this.preco = preco;
+		this.preco= null;
 	}
 	
 	public String getNome() {
